@@ -1,0 +1,62 @@
+<body class="bg-light">
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Add a new pet</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 order-md-1">
+            <form (ngSubmit) = "onSubmit()" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="name" placeholder="Name"
+                            [(ngModel)] = "pet.name" name="name">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="code">Code</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="code" placeholder="Code"
+                            [(ngModel)] = "pet.code" name="code">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="types">Type</label>
+                    <select class="custom-select d-block w-100" id="types"
+                        [(ngModel)] = "pet.type" name="type">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let type of types">{{type.type}}</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="colors">Fur color</label>
+                    <select class="custom-select d-block w-100" id="colors"
+                        [(ngModel)] = "pet.furColor" name="furColor">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let furColor of fur_colors">{{furColor.furColor}}</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="countries">Country of origin</label>
+                    <select class="custom-select d-block w-100" id="countries"
+                        [(ngModel)] = "pet.country" name="country">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let Country of countries">{{Country.country}}</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block"
+                        type="submit">
+                    Add Pet
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,35 @@
+<div class="py-5 text-center">
+    <h2>Pets</h2>
+</div>
+
+<div class="row">
+    <td>
+        <a routerLink="/add-pet" routerLinkActive="active" class="btn btn-primary">Add pet</a>
+    </td>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Code</th>
+                <th scope="col">Type</th>
+                <th scope="col">Fur color</th>
+                <th scope="col">Country</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let pet of pets">
+                <th scope="row">{{pet.id}}</th>
+                <td> {{pet.name}} </td>
+                <td> {{pet.code}} </td>
+                <td> {{pet.type}} </td>
+                <td> {{pet.furColor}} </td>
+                <td> {{pet.country}} </td>
+                <td>
+                    <button (click) = "updatePet(pet.id)" class="btn btn-primary">Edit pet</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
